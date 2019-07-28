@@ -111,7 +111,6 @@ class Solution2 {
 
 	public int[] solution(int m, int n, int[][] picture) {
 		arr = picture;
-		flag = new boolean[m][n];
 		lengthX = picture.length;
 		lengthY = picture[0].length;
 		for (int i = 0; i < m; i++) {
@@ -136,14 +135,17 @@ class Solution2 {
 
 	public void solu(int i, int j) {
 		arr[i][j] = 0;
-		 System.out.println("" +i+","+j);
-			
+		System.out.println("" + i + "," + j);
+
 		if ((i - 1) >= 0 && arr[i - 1][j] == current)
 			solu(i - 1, j);
+
 		if ((i + 1) < lengthX && arr[i + 1][j] == current)
 			solu(i + 1, j);
+
 		if ((j - 1) >= 0 && arr[i][j - 1] == current)
 			solu(i, j - 1);
+
 		if ((j + 1) < lengthY && arr[i][j + 1] == current)
 			solu(i, j + 1);
 
@@ -152,6 +154,3 @@ class Solution2 {
 	}
 
 }
-
-
-
